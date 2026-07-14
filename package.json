@@ -1,0 +1,13 @@
+{
+  "name": "nexus-bot",
+  "version": "1.0.0",
+  "description": "Lightweight Premium Messenger Bot",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "fca-project-orion": "^1.1.0",
+    "axios": "^1.6.0"
+  }
+}
