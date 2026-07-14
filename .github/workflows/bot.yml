@@ -16,7 +16,7 @@ jobs:
           node-version: '18'
 
       - name: Install Dependencies
-        run: npm install fca-project-orion axios uuid@8.3.2 --ignore-scripts --no-fund --no-audit
+        run: npm install --ignore-scripts --no-fund --no-audit
 
       - name: Run Nexus Bot
         run: node index.js
