@@ -1,22 +1,10 @@
-name: Nexus Bot Runner
+ - name: Setup Node.js
+    uses: actions/setup-node@v3
+    with:
+      node-version: '20'
 
-on:
-  workflow_dispatch:
+  - name: Install Dependencies
+    run: npm install --loglevel=error --no-audit --no-fund
 
-jobs:
-  run-bot:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v3
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '20'
-
-      - name: Install Dependencies
-        run: npm install
-
-      - name: Run Nexus Bot
-        run: npm start
+  - name: Run Nexus Bot
+    run: npm start
