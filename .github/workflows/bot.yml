@@ -6,17 +6,20 @@ on:
 jobs:
   run-bot:
     runs-on: ubuntu-latest
+    env:
+      PUPPETEER_SKIP_DOWNLOAD: true
+      PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: true
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: '20'
 
       - name: Install Dependencies
-        run: npm install --no-fund --no-audit --loglevel=error
+        run: npm install --no-fund --no-audit
 
       - name: Run Nexus Bot
         run: npm start
