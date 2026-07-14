@@ -5,10 +5,7 @@ on:
 
 jobs:
   run-bot:
-    runs-on: ubuntu-latest
-    env:
-      PUPPETEER_SKIP_DOWNLOAD: true
-      PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: true
+    runs-on: ubuntu-20.04
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -16,10 +13,10 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '18'
 
       - name: Install Dependencies
-        run: npm install --force --no-fund --no-audit
+        run: npm install axios fca-project-orion --legacy-peer-deps --no-audit --no-fund
 
       - name: Run Nexus Bot
-        run: npm start
+        run: node index.js
