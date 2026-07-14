@@ -19,7 +19,7 @@ jobs:
           node-version: '20'
 
       - name: Install Dependencies
-        run: npm install --no-fund --no-audit
+        run: npm install --force --no-fund --no-audit
 
       - name: Run Nexus Bot
         run: npm start
