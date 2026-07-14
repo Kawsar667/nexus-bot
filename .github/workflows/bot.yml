@@ -5,7 +5,7 @@ on:
 
 jobs:
   run-bot:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -16,7 +16,7 @@ jobs:
           node-version: '18'
 
       - name: Install Dependencies
-        run: npm install axios fca-project-orion --legacy-peer-deps --no-audit --no-fund
+        run: npm install fca-project-orion axios --ignore-scripts --no-fund --no-audit
 
       - name: Run Nexus Bot
         run: node index.js
